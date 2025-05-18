@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 1 Actividad 04</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300&display=swap">
+    <style>
+        body {
+            color: limegreen;
+            background-color: black;
+            border: crimson 2px dashed;
+        }
+    </style>
+</head>
+<body style="color:white;background-color:black">
+    <h1>Unidad 1 Actividad 04</h1>
+
+    <p>En esta actividad vamos a crear un archivo HTML con el nombre "unidad_01_actividad_04.html". 
+    Este archivo debe contener un botón que al hacer clic cambie el color de fondo del documento.</p>
+
+    <button onclick='document.body.style.backgroundColor = "blue"'>Cambiar a azul</button><br><br>
+    <button onclick='document.body.style.backgroundColor = "red"'>Cambiar a rojo</button><br><br>
+    <button onclick='document.body.style.backgroundColor = "green"'>Cambiar a verde</button><br><br>
+
+    <div id="funcionarios">
+        <h2>Lista de funcionarios:</h2>
+        <ul id="lista_funcionarios">
+            <li>Ana</li>
+            <li>Carlos</li>
+            <li>Pedro</li>
+            <li>Sofía</li>
+        </ul>
+    </div>
+
+    <p>Puedes añadir más elementos a la lista utilizando el siguiente formulario:</p>
+
+    <form onsubmit="agregarFuncionario(); return false;">
+        <input type="text" id="nuevo_funcionario" placeholder="Nombre del funcionario">
+        <button type="submit">Añadir funcionario</button>
+    </form>
+
+    <script>
+        function agregarFuncionario() {
+            var nombre = document.getElementById("nuevo_funcionario").value;
+            if (nombre.trim() !== "") {
+                var li = document.createElement("li");
+                li.textContent = nombre;
+                document.getElementById("lista_funcionarios").appendChild(li);
+                document.getElementById("nuevo_funcionario").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
+
